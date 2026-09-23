@@ -26,7 +26,3 @@ app.get("/users/:id", (req, res) => {
   }
   res.status(200).json({ name: req.params.id, role });
 });
-
-app.use((req, res) => {
-  res.status(404).json({ error: "route not found" });
-});

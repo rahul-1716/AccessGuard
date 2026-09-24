@@ -31,7 +31,7 @@ router.get("/users/:id", (req, res) => {
   res.status(200).json({ name: req.params.id, role });
 });
 
-router.route("/register").post(validate(registerSchema), (req, res) => {
-  const { email, name }: registerInputType = req.body;
-  return res.status(201).json({ ok: true, data: { email, name } });
-});
+// router.route("/register").post(validate(registerSchema), (req, res) => {
+//   const { email, name }: registerInputType = req.body;
+//   return res.status(201).json({ ok: true, data: { email, name } });
+// });

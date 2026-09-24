@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from "express";
 import { randomUUID } from "node:crypto";
 import { router } from "./routes.js";
+import authRouter from "./routes/auth.js";
 export const app = express();
 
 const logger = (req: Request, res: Response, next: NextFunction) => {
@@ -26,6 +27,7 @@ app.use(attachRequestId);
 app.use(express.json());
 
 app.use(router);
+app.use(authRouter);
 
 app.get("/boom", (_req, res) => {
   throw new Error("secret db password: hunter2");

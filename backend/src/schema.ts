@@ -21,3 +21,7 @@ export const inviteSchema = z.object({
 });
 
 export type inviteInputType = z.infer<typeof inviteSchema>;
+
+export const refreshSchema = z.object({
+  refreshToken: z.string().min(64),
+});
